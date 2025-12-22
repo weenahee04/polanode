@@ -1,7 +1,12 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { KnowledgeGraphData, FlowchartData, MedicalChecklist } from "../types";
 
-const apiKey = process.env.API_KEY || '';
+// Support both Vite's import.meta.env and process.env for compatibility
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || 
+                import.meta.env.GEMINI_API_KEY || 
+                (typeof process !== 'undefined' && process.env?.API_KEY) || 
+                (typeof process !== 'undefined' && process.env?.GEMINI_API_KEY) || 
+                '';
 
 // Initialize the client
 const ai = new GoogleGenAI({ apiKey });
@@ -11,7 +16,8 @@ export const generateHealthAdvice = async (
   onChunk: (text: string) => void
 ): Promise<string> => {
   if (!apiKey) {
-    const errorMsg = "API Key is missing. Please configure process.env.API_KEY.";
+    const errorMsg = "API Key is missing. Please configure GEMINI_API_KEY environment variable in Netlify (Site settings → Environment variables) or in .env.local for local development.";
+    console.error("Gemini API Key missing. Check environment variables.");
     onChunk(errorMsg);
     return errorMsg;
   }
