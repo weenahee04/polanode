@@ -39,7 +39,7 @@ import { MedicalFlowchart } from './components/MedicalFlowchart';
 import { SlitLampChecklist } from './components/SlitLampChecklist';
 import { AIBrainView } from './components/AIBrainView';
 import { MaintenanceScreen } from './components/MaintenanceScreen';
-import { generateHealthAdvice, extractKnowledgeGraph, generateRandomHealthQuestion, analyzeMedicalImage } from './services/hybridAIService';
+import { generateHealthAdvice, extractKnowledgeGraph, generateRandomHealthQuestion, analyzeMedicalImage } from './services/geminiService';
 import { QuickNavItem, RewardItem, ChatMessage, Tab, KnowledgeGraphData, FlowchartData, LearnedConcept, MedicalChecklist } from './types';
 
 // --- MOCK DATA ---
