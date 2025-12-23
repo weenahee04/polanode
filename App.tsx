@@ -38,6 +38,7 @@ import { KnowledgeGraph } from './components/KnowledgeGraph';
 import { MedicalFlowchart } from './components/MedicalFlowchart';
 import { SlitLampChecklist } from './components/SlitLampChecklist';
 import { AIBrainView } from './components/AIBrainView';
+import { MaintenanceScreen } from './components/MaintenanceScreen';
 import { generateHealthAdvice, extractKnowledgeGraph, generateRandomHealthQuestion, analyzeMedicalImage } from './services/hybridAIService';
 import { QuickNavItem, RewardItem, ChatMessage, Tab, KnowledgeGraphData, FlowchartData, LearnedConcept, MedicalChecklist } from './types';
 
@@ -104,7 +105,16 @@ const REWARD_ITEMS: RewardItem[] = [
 
 const REWARD_CATEGORIES = ['All', 'Clinic', 'Food', 'Checkup', 'Pharmacy', 'Services'];
 
+// Maintenance Mode - ตั้งค่าเป็น true เพื่อเปิดหน้า maintenance
+// หรือใช้ environment variable: VITE_MAINTENANCE_MODE=true
+const MAINTENANCE_MODE = import.meta.env.VITE_MAINTENANCE_MODE === 'true' || false;
+
 const App: React.FC = () => {
+  // ถ้าเปิด maintenance mode ให้แสดงหน้า maintenance
+  if (MAINTENANCE_MODE) {
+    return <MaintenanceScreen />;
+  }
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
   const [activeTab, setActiveTab] = useState<Tab>(Tab.HOME);

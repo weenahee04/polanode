@@ -20,6 +20,8 @@ export default defineConfig(({ mode }) => {
         'process.env.GROQ_API_KEY': JSON.stringify(env.GROQ_API_KEY || env.VITE_GROQ_API_KEY || ''),
         'import.meta.env.VITE_GROQ_API_KEY': JSON.stringify(env.GROQ_API_KEY || env.VITE_GROQ_API_KEY || ''),
         'import.meta.env.GROQ_API_KEY': JSON.stringify(env.GROQ_API_KEY || env.VITE_GROQ_API_KEY || ''),
+        // Maintenance Mode
+        'import.meta.env.VITE_MAINTENANCE_MODE': JSON.stringify(env.VITE_MAINTENANCE_MODE || 'false'),
       },
       resolve: {
         alias: {
