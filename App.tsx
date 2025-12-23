@@ -38,7 +38,7 @@ import { KnowledgeGraph } from './components/KnowledgeGraph';
 import { MedicalFlowchart } from './components/MedicalFlowchart';
 import { SlitLampChecklist } from './components/SlitLampChecklist';
 import { AIBrainView } from './components/AIBrainView';
-import { generateHealthAdvice, extractKnowledgeGraph, generateRandomHealthQuestion, analyzeMedicalImage } from './services/geminiService';
+import { generateHealthAdvice, extractKnowledgeGraph, generateRandomHealthQuestion, analyzeMedicalImage } from './services/hybridAIService';
 import { QuickNavItem, RewardItem, ChatMessage, Tab, KnowledgeGraphData, FlowchartData, LearnedConcept, MedicalChecklist } from './types';
 
 // --- MOCK DATA ---
