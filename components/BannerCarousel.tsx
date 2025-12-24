@@ -26,11 +26,11 @@ const BANNERS = [
 
 export const BannerCarousel: React.FC = () => {
   return (
-    <div className="flex w-full gap-4 overflow-x-auto px-5 pb-2 pt-2 snap-x mandatory no-scrollbar">
+    <div className="flex w-full gap-3 md:gap-4 overflow-x-auto px-4 md:px-5 lg:px-6 pb-2 pt-2 snap-x mandatory no-scrollbar">
       {BANNERS.map((banner) => (
         <div 
           key={banner.id} 
-          className="relative min-w-[85%] snap-center overflow-hidden rounded-2xl shadow-md group"
+          className="relative min-w-[85%] md:min-w-[70%] lg:min-w-[50%] snap-center overflow-hidden rounded-xl md:rounded-2xl shadow-md group"
         >
           <div className="aspect-[2.4/1] w-full relative">
             <img 
@@ -43,9 +43,9 @@ export const BannerCarousel: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-90"></div>
             
             {/* Text Content */}
-            <div className="absolute bottom-0 left-0 p-4">
-              <h3 className="text-xl font-bold text-white font-kanit drop-shadow-md tracking-wide">{banner.title}</h3>
-              <p className="text-sm text-white/90 font-kanit drop-shadow-sm font-medium">{banner.subtitle}</p>
+            <div className="absolute bottom-0 left-0 p-3 md:p-4">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-white font-kanit drop-shadow-md tracking-wide">{banner.title}</h3>
+              <p className="text-xs md:text-sm lg:text-base text-white/90 font-kanit drop-shadow-sm font-medium">{banner.subtitle}</p>
             </div>
           </div>
         </div>

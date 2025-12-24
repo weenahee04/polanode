@@ -15,68 +15,68 @@ export const MaintenanceScreen: React.FC<MaintenanceScreenProps> = ({
   contactEmail = "support@thailife-rewards.com"
 }) => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 px-6 py-12">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 px-4 md:px-6 lg:px-8 py-8 md:py-12">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br from-[#0056b3]/10 to-[#00a8e8]/10 blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-gradient-to-tr from-[#00a8e8]/10 to-[#0056b3]/10 blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-gradient-to-r from-[#0056b3]/5 to-[#00a8e8]/5 blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute -right-20 -top-20 h-48 w-48 md:h-64 md:w-64 rounded-full bg-gradient-to-br from-[#0056b3]/10 to-[#00a8e8]/10 blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-20 -left-20 h-48 w-48 md:h-64 md:w-64 rounded-full bg-gradient-to-tr from-[#00a8e8]/10 to-[#0056b3]/10 blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-72 w-72 md:h-96 md:w-96 rounded-full bg-gradient-to-r from-[#0056b3]/5 to-[#00a8e8]/5 blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="relative z-10 flex w-full max-w-md flex-col items-center text-center">
+      <div className="relative z-10 flex w-full max-w-md md:max-w-lg lg:max-w-xl flex-col items-center text-center">
         {/* Logo/Icon Section */}
-        <div className="mb-8 flex flex-col items-center animate-fade-in-down">
-          <div className="relative mb-6">
+        <div className="mb-6 md:mb-8 flex flex-col items-center animate-fade-in-down">
+          <div className="relative mb-4 md:mb-6">
             {/* Outer Glow */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#0056b3] to-[#00a8e8] opacity-20 blur-2xl animate-pulse"></div>
             
             {/* Icon Container */}
-            <div className="relative flex h-24 w-24 items-center justify-center rounded-3xl bg-gradient-to-br from-[#0056b3] to-[#00a8e8] shadow-2xl shadow-blue-500/30">
-              <Wrench className="h-12 w-12 text-white animate-spin" style={{ animationDuration: '3s' }} />
+            <div className="relative flex h-20 w-20 md:h-24 md:w-24 items-center justify-center rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#0056b3] to-[#00a8e8] shadow-2xl shadow-blue-500/30">
+              <Wrench className="h-10 w-10 md:h-12 md:w-12 text-white animate-spin" style={{ animationDuration: '3s' }} />
             </div>
           </div>
 
           {/* Brand Name */}
-          <h1 className="text-3xl font-bold text-slate-800 font-kanit tracking-tight mb-2">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 font-kanit tracking-tight mb-2">
             POLA<span className="text-[#00a8e8]">NODE</span>
           </h1>
         </div>
 
         {/* Main Content */}
-        <div className="w-full space-y-6 animate-fade-in-up">
+        <div className="w-full space-y-4 md:space-y-6 animate-fade-in-up">
           {/* Title */}
           <div>
-            <h2 className="text-2xl font-bold text-slate-800 font-kanit mb-2">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 font-kanit mb-2">
               {title}
             </h2>
-            <p className="text-base text-slate-600 font-kanit leading-relaxed">
+            <p className="text-sm md:text-base lg:text-lg text-slate-600 font-kanit leading-relaxed">
               {message}
             </p>
           </div>
 
           {/* Info Cards */}
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {/* Estimated Time Card */}
-            <div className="flex items-center gap-4 rounded-2xl bg-white/80 backdrop-blur-sm p-4 shadow-md border border-slate-200">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-orange-100 to-orange-50">
-                <Clock className="h-6 w-6 text-orange-600" />
+            <div className="flex items-center gap-3 md:gap-4 rounded-xl md:rounded-2xl bg-white/80 backdrop-blur-sm p-3 md:p-4 shadow-md border border-slate-200">
+              <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-lg md:rounded-xl bg-gradient-to-br from-orange-100 to-orange-50 flex-shrink-0">
+                <Clock className="h-5 w-5 md:h-6 md:w-6 text-orange-600" />
               </div>
-              <div className="flex-1 text-left">
-                <p className="text-xs font-medium text-slate-500 font-kanit mb-1">เวลาที่คาดการณ์</p>
-                <p className="text-sm font-bold text-slate-800 font-kanit">{estimatedTime}</p>
+              <div className="flex-1 text-left min-w-0">
+                <p className="text-[10px] md:text-xs font-medium text-slate-500 font-kanit mb-0.5 md:mb-1">เวลาที่คาดการณ์</p>
+                <p className="text-xs md:text-sm font-bold text-slate-800 font-kanit break-words">{estimatedTime}</p>
               </div>
             </div>
 
             {/* Contact Card */}
-            <div className="flex items-center gap-4 rounded-2xl bg-white/80 backdrop-blur-sm p-4 shadow-md border border-slate-200">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-blue-50">
-                <Sparkles className="h-6 w-6 text-blue-600" />
+            <div className="flex items-center gap-3 md:gap-4 rounded-xl md:rounded-2xl bg-white/80 backdrop-blur-sm p-3 md:p-4 shadow-md border border-slate-200">
+              <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-lg md:rounded-xl bg-gradient-to-br from-blue-100 to-blue-50 flex-shrink-0">
+                <Sparkles className="h-5 w-5 md:h-6 md:w-6 text-blue-600" />
               </div>
-              <div className="flex-1 text-left">
-                <p className="text-xs font-medium text-slate-500 font-kanit mb-1">ติดต่อสอบถาม</p>
+              <div className="flex-1 text-left min-w-0">
+                <p className="text-[10px] md:text-xs font-medium text-slate-500 font-kanit mb-0.5 md:mb-1">ติดต่อสอบถาม</p>
                 <a 
                   href={`mailto:${contactEmail}`}
-                  className="text-sm font-bold text-[#0056b3] font-kanit hover:text-[#00a8e8] transition-colors"
+                  className="text-xs md:text-sm font-bold text-[#0056b3] font-kanit hover:text-[#00a8e8] transition-colors break-all"
                 >
                   {contactEmail}
                 </a>
@@ -85,11 +85,11 @@ export const MaintenanceScreen: React.FC<MaintenanceScreenProps> = ({
           </div>
 
           {/* Message */}
-          <div className="rounded-2xl bg-gradient-to-r from-[#0056b3]/10 to-[#00a8e8]/10 p-5 border border-blue-200/50">
-            <p className="text-sm text-slate-700 font-kanit leading-relaxed">
+          <div className="rounded-xl md:rounded-2xl bg-gradient-to-r from-[#0056b3]/10 to-[#00a8e8]/10 p-4 md:p-5 border border-blue-200/50">
+            <p className="text-xs md:text-sm lg:text-base text-slate-700 font-kanit leading-relaxed">
               ขออภัยในความไม่สะดวก เราจะกลับมาให้บริการเร็วๆ นี้
               <br />
-              <span className="text-xs text-slate-500 mt-2 block">
+              <span className="text-[10px] md:text-xs text-slate-500 mt-2 block">
                 (We apologize for the inconvenience. We'll be back soon!)
               </span>
             </p>
@@ -98,16 +98,16 @@ export const MaintenanceScreen: React.FC<MaintenanceScreenProps> = ({
           {/* Refresh Button */}
           <button
             onClick={() => window.location.reload()}
-            className="group mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0056b3] to-[#00a8e8] py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:scale-[1.02] active:scale-95 font-kanit"
+            className="group mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0056b3] to-[#00a8e8] py-3 md:py-3.5 text-xs md:text-sm font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:scale-[1.02] active:scale-95 font-kanit"
           >
             <span>ลองใหม่อีกครั้ง</span>
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="h-3.5 w-3.5 md:h-4 md:w-4 transition-transform group-hover:translate-x-1" />
           </button>
         </div>
 
         {/* Footer */}
-        <div className="mt-8 text-center">
-          <p className="text-xs text-slate-400 font-kanit">
+        <div className="mt-6 md:mt-8 text-center">
+          <p className="text-[10px] md:text-xs text-slate-400 font-kanit">
             © 2025 POLANODE. All rights reserved.
           </p>
         </div>
